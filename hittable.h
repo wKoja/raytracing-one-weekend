@@ -1,9 +1,7 @@
 #ifndef HITTABLE_H
 #define HITTABLE_H
 
-#include "ray.h"
 #include "rtweekend.h"
-#include "vec3.h"
 
 class material;
 
@@ -15,7 +13,7 @@ struct hit_record {
   bool front_face;
 
   inline void set_face_normal(const ray &r, const vec3 &outward_normal) {
-    front_face = dot(r.direction(), outward_normal);
+    front_face = dot(r.direction(), outward_normal) < 0;
     normal = front_face ? outward_normal : -outward_normal;
   }
 };
