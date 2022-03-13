@@ -1,2 +1,2 @@
 #!/bin/sh
-g++ -o output main.cpp && ./output > imgoutput && sxiv imgoutput
+g++ -std=c++20 -o output main.cpp && ./output && sxiv imgoutput
